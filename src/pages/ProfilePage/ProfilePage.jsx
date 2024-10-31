@@ -1,3 +1,5 @@
+// Kodet af Andreas
+
 // Import necessary dependencies and components
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
