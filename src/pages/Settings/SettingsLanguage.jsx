@@ -1,4 +1,4 @@
-// Kodet af Nikoline
+// Kodet af Oliver
 import SettingLanguage from "../../components/Settings/SettingLanguage";
 import TopNav from "../../components/Navigation/TopNav";
 
