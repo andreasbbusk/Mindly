@@ -1,3 +1,4 @@
+// Kodet af Nikoline
 import SettingPrivacy from "../../components/Settings/SettingPrivacy";
 import TopNav from "../../components/Navigation/TopNav";
 

@@ -1,3 +1,5 @@
+// Kodet af Andreas
+
 import { useState, useEffect, useRef } from "react";
 import { getAuth } from "firebase/auth";
 import { getDatabase, ref, onValue } from "firebase/database";

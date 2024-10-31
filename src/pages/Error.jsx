@@ -1,3 +1,5 @@
+// Kodet af Nikoline
+
 import Error404 from "../components/Error404.jsx";
 
 const Settings = () => {
