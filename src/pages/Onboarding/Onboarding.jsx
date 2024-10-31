@@ -1,3 +1,4 @@
+// Kodet af Nicolaj og Nikoline
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { NavLink } from "react-router-dom";
