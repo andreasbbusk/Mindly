@@ -1,3 +1,4 @@
+// Kodet af Oliver
 import { useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
