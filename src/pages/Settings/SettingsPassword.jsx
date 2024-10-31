@@ -1,4 +1,4 @@
-// Kodet af Nikoline
+// Kodet af Oliver
 import SettingPassword from "../../components/Settings/SettingPassword";
 import TopNav from "../../components/Navigation/TopNav";
 
