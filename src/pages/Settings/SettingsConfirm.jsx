@@ -1,3 +1,4 @@
+// Kodet af Nikoline
 import SettingConfirm from "../../components/Settings/SettingConfirm";
 import TopNav from "../../components/Navigation/TopNav";
 
