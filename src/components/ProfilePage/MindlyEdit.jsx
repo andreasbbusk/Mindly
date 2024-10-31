@@ -93,11 +93,8 @@ const MindlyEdit = () => {
       subject: editedSubject,
       text: editedText,
       mood: editedMood,
+      image: editedImage // Always include image field, will be null if removed
     };
-    
-    if (editedImage) {
-      updatedMindly.image = editedImage;
-    }
     
     const mindlyRef = ref(db, `users/${userId}/mindlys/${id}`);
     

@@ -1087,6 +1087,25 @@ input {
   transform: rotate(-5deg);
 }
 
+
+.MindlyFull-Hoejre img {
+  width: 200px;
+  margin-top: -1.5rem;
+  height: 200px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.MindlyFull-Venstre img {
+  width: 70px;
+  height: 400px;
+  top: 0;
+  right: 1rem;
+  position: absolute;
+  transform: rotate(-7deg);
+}
+
 /* Subject Input Section */
 .MindlyPost-Subject {
   display: block;
@@ -1188,6 +1207,27 @@ input {
   margin-left: 2.5rem;
   font-weight: var(--font-regular);
   font-size: 1rem;
+}
+
+.MindlyPost-ButtonContainer {
+  margin-top: 2rem;
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.MindlyPost-SaveButton {
+  background-color: var(--clr-red);
+  padding: 0.5rem;
+  border-radius: 10px;
+  box-shadow: var(--box-shadow);
+  color: var(--clr-white);
+}
+
+.MindlyPost-DeleteButton {
+  background-color: var(--clr-white);
+  padding: 0.5rem;
+  border-radius: 10px;
 }
 
 .MindlyPost-AddPhoto img {
@@ -1520,7 +1560,7 @@ input {
 /* Header */
 .mindly-full-view h2 {
   text-align: center;
-  margin-top: 5rem;
+  margin-top: 7rem;
 }
 
 /* Main image */
