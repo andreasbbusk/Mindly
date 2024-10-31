@@ -33,7 +33,7 @@ const Onboarding = () => {
   };
 
   return (
-    <>
+    <main className="onboarding-main">
       {/* Main container for onboarding content */}
       <motion.div
         initial="initial"
@@ -192,7 +192,7 @@ const Onboarding = () => {
           </svg>
         </button>
       </div>
-    </>
+    </main>
   );
 };
 

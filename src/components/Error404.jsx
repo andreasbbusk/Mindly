@@ -1,9 +1,12 @@
 import { NavLink } from "react-router-dom";
 import Error404 from "../assets/Error404.png";
+import TopNav from "../components/Navigation/TopNav.jsx";
 
 export default function SettingMenu() {
   return (
-    <div className="settings-front-error">
+    <>
+      <TopNav />
+      <div className="settings-front-error">
       <div className="setting-img">
         <img src={Error404} alt="Mindly" />
       </div>
@@ -21,11 +24,12 @@ export default function SettingMenu() {
         </div>
         <p>or</p>
         <div>
-          <NavLink className="cta_red cta_error" to="/Edit" type="button">
+          <NavLink className="cta_red cta_error" to="/create-mindly" type="button">
             Add Mindly
           </NavLink>
         </div>
       </div>
     </div>
+    </>
   );
 }
