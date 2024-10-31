@@ -18,7 +18,7 @@ import MoodVisualization from "./components/ProfilePage/MoodVisualization";
 
 // Onboarding and Splash Screen
 import Onboarding from "./pages/Onboarding/Onboarding";
-import SplashScreen from "./pages/SplashScreen";
+import Splashscreen from "./pages/Splashscreen"
 
 // Settings Pages
 import SettingsFrontScreen from "./pages/Settings/SettingsFrontScreen";
@@ -46,7 +46,7 @@ function App() {
   }, []);
 
   if (isLoading) {
-    return <SplashScreen />;
+    return <Splashscreen />;
   }
 
   return (
