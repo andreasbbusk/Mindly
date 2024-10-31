@@ -10,7 +10,7 @@ import MellemSurMedFarve from "../../assets/MellemSurMedFarve.png";
 import LidtGladMedFarve from "../../assets/LidtGladMedFarve.png";
 import HeltGladMedFarve from "../../assets/HeltGladMedFarve.png";
 import EditIcon from "../../assets/editicon.png";
-import FallbackImage from "../../assets/FallbackImage.png";
+import FallbackImage from "../../assets/FallBackImage.png";
 import VenstreStreg from "../../assets/LeftIllustration.png";
 import HoejreStreg from "../../assets/RightIllustration.png";
 
