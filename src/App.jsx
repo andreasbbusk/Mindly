@@ -1,3 +1,5 @@
+// Kodet af Oliver, Nikoline, Andreas og Nicolaj
+
 import { useState, useEffect } from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
 
