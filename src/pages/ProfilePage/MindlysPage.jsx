@@ -1,3 +1,5 @@
+// Kodet af Andreas
+
 import { useState, useEffect, useCallback } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import Modal from "react-modal";
