@@ -1,3 +1,5 @@
+// Kodet af Nicolaj
+
 import { useState, useEffect } from "react";
 import { useNavigate, NavLink } from "react-router-dom";
 import myImage from "../assets/HomeScreen.png";
