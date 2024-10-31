@@ -1,3 +1,4 @@
+// Kodet af Oliver
 // React and routing imports
 import { useState, useRef, useMemo } from "react";
 import { useNavigate } from "react-router-dom";
