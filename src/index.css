@@ -1100,15 +1100,17 @@ input {
   position: absolute;
   top: 0;
   left: 0;
+  object-fit: contain;
 }
 
 .MindlyFull-Venstre img {
   width: 70px;
   height: 400px;
   top: 0;
-  right: 1rem;
+  right: 0;
   position: absolute;
-  transform: rotate(-7deg);
+  object-fit: contain;
+  overflow: hidden;
 }
 
 /* Subject Input Section */
@@ -1215,7 +1217,7 @@ input {
 }
 
 .MindlyPost-ButtonContainer {
-  margin-top: 2rem;
+  margin: 2rem 0;
   display: flex;
   gap: 2rem;
   justify-content: center;
@@ -1562,10 +1564,32 @@ input {
   margin-top: 13rem;
 }
 
+/* Edit Mindly Overskrift */
+
+.edit-mindly-overskrift {
+  
+}
+
+.edit-mindly-overskrift h1 {
+  font-size: var(--font-h3);
+  margin-top: 7rem;
+  text-align: center;
+}
+
+.edit-mindly-overskrift p {
+  text-align: center;
+  font-size: var(--font-h6);
+}
+
 /* Header */
 .mindly-full-view h2 {
+  display: flex;
+  justify-content: center;
   text-align: center;
-  margin-top: 7rem;
+  max-width: 250px;
+  margin: 7rem auto 0 auto;
+  z-index: 99000;
+  font-size: var(--font-h4);
 }
 
 /* Main image */
@@ -1631,6 +1655,8 @@ input {
 .mindly-description {
   font-size: 1rem;
   max-width: 13rem;
+  display: flex;
+  flex-direction: column;
 }
 
 /* Mood section */
@@ -1638,6 +1664,7 @@ input {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 5px;
   margin-top: 2rem;
 }
 

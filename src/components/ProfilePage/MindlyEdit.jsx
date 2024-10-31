@@ -21,6 +21,10 @@ import LidtGladUdenFarve from "../../assets/LidtGladUdenFarve.png";
 import HeltGladUdenFarve from "../../assets/HeltGladUdenFarve.png";
 import AddPhoto from "../../assets/AddPhoto.png";
 
+// Streger (Lines)
+import VenstreStreg from "../../assets/LeftIllustration.png";
+import HoejreStreg from "../../assets/RightIllustration.png";
+
 // Mood images configuration
 const moodImages = [
   { name: "HeltSur", withColor: HeltSurMedFarve, withoutColor: HeltSurUdenFarve },
@@ -45,6 +49,7 @@ const MindlyEdit = () => {
   const [editedMood, setEditedMood] = useState("");
   const [editedImage, setEditedImage] = useState(null);
   const [userId, setUserId] = useState(null);
+  const [imageRemoved, setImageRemoved] = useState(false);
 
   // Effects
   useEffect(() => {
@@ -69,7 +74,7 @@ const MindlyEdit = () => {
           setEditedSubject(data.subject);
           setEditedText(data.text);
           setEditedMood(data.mood);
-          setEditedImage(data.image);
+          setEditedImage(data.image || null);
           setIsOpen(true);
         } else {
           console.log("Nothing found!");
@@ -87,23 +92,44 @@ const MindlyEdit = () => {
 
   // Handlers
   const handleSave = async () => {
-    if (!userId) return;
+    if (!userId) {
+      console.error("No user ID found");
+      alert("Please log in to save changes");
+      return;
+    }
+    
+    // Validate required fields
+    if (!editedSubject || !editedText || !editedMood) {
+      alert("Please fill in all required fields");
+      return;
+    }
+
     const updatedMindly = {
       ...mindly,
       subject: editedSubject,
       text: editedText,
       mood: editedMood,
-      image: editedImage // Always include image field, will be null if removed
+      lastEdited: new Date().toISOString()
     };
+
+    // Handle image state
+    if (imageRemoved) {
+      updatedMindly.image = null;
+    } else if (editedImage) {
+      updatedMindly.image = editedImage;
+    }
     
     const mindlyRef = ref(db, `users/${userId}/mindlys/${id}`);
     
     try {
+      console.log("Attempting to save:", updatedMindly);
       await update(mindlyRef, updatedMindly);
+      console.log("Save successful");
       setMindly(updatedMindly);
       navigate(-1);
     } catch (error) {
       console.error("Error updating mindly:", error);
+      alert(`Failed to save changes: ${error.message}`);
     }
   };
 
@@ -119,9 +145,9 @@ const MindlyEdit = () => {
     }
   };
 
-   // Handlers
-   const handleRemoveImage = () => {
+  const handleRemoveImage = () => {
     setEditedImage(null);
+    setImageRemoved(true);
   };
 
   const handleImageUpload = (event) => {
@@ -130,6 +156,7 @@ const MindlyEdit = () => {
       const reader = new FileReader();
       reader.onloadend = () => {
         setEditedImage(reader.result);
+        setImageRemoved(false);
       };
       reader.readAsDataURL(file);
     }
@@ -140,10 +167,25 @@ const MindlyEdit = () => {
     return null; // Or a loading indicator
   }
 
-  // Render
   return (
     <>
       <TopNav />
+      <div className="edit-mindly-overskrift">
+        <h1>Edit Mindly</h1>
+        <p>
+          Forgot to add something? <br />
+          No worries, jot down your thoughts.
+        </p>
+      </div>
+      <div className="MindlyPost-streg-box">
+        <div className="MindlyFull-Hoejre">
+          <img src={HoejreStreg} alt="Right illustration" loading="lazy" />
+        </div>
+
+        <div className="MindlyFull-Venstre">
+          <img src={VenstreStreg} alt="Left illustration" loading="lazy" />
+        </div>
+      </div>
       {isOpen && (
         <motion.div
           className="mindly-full-view-edit"
