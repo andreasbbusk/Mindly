@@ -1,11 +1,11 @@
 // Generel Firebase opsætning og implementation lavet af Andreas
 
-// Import the functions you need from the SDKs you need
+// Imported functions
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 import { getDatabase } from "firebase/database";
 
-// Your web app's Firebase configuration
+// Firebase configuration
 const firebaseConfig = {
   apiKey: "AIzaSyDkZKsseF2bUmitynUetVaP38cvacPKp_8",
   authDomain: "mindly-8b8eb.firebaseapp.com",
