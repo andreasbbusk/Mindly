@@ -207,8 +207,8 @@ const Home = () => {
             ) : (
               <p>No mindlys yet.</p>
             )}
-            <NavLink to="/profile/mindlyspage" className="cta_red">
-              See All Mindlys
+            <NavLink to="/create-mindly" className="cta_red">
+              Create Mindly
             </NavLink>
           </div>
         </div>

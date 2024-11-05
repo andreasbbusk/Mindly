@@ -132,11 +132,12 @@ const MoodVisualization = () => {
                 )}
               </div>
               <span className="week-label">
-                {week.weekNum === currentWeek ? "week " + currentWeek : `week ${week.weekNum}`}
+                {week.weekNum === currentWeek
+                  ? "week " + currentWeek
+                  : `week ${week.weekNum}`}
               </span>
             </div>
           ))}
-
         </div>
       </div>
     </>

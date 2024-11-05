@@ -15,10 +15,19 @@ const SignUp = () => {
   const handleSubmit = async () => {
     if (!email || !password || !confirmPassword || !username) {
       setError("Please fill in all fields.");
+      alert("Please fill in all fields.");
       return;
     }
+
+    if (password.length < 6) {
+      setError("Password must be at least 6 characters long.");
+      alert("Password must be at least 6 characters long.");
+      return;
+    }
+
     if (password !== confirmPassword) {
       setError("Passwords do not match.");
+      alert("Passwords do not match.");
       return;
     }
 
@@ -33,7 +42,9 @@ const SignUp = () => {
       setError("");
       navigate("/Login");
     } catch (error) {
-      setError("Error creating account. Please try again.");
+      const errorMessage = "Error creating account. Please try again.";
+      setError(errorMessage);
+      alert(errorMessage);
       console.error("Error creating account: ", error);
     }
   };
@@ -53,7 +64,7 @@ const SignUp = () => {
           <h3>What should we call you?</h3>
           <input
             type="text"
-            placeholder="Enter your username"
+            placeholder="Enter your username (min. 3 characters)"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
             maxLength={10}
@@ -72,7 +83,7 @@ const SignUp = () => {
           <h3>Password</h3>
           <input
             type="password"
-            placeholder="Enter your Password"
+            placeholder="Enter your Password (min. 6 characters)"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
